@@ -1,5 +1,5 @@
-import time
-import random
+from time import sleep 
+from random import choice
 def short(u):
     p=''
     if u == 'R':
@@ -15,27 +15,27 @@ def short(u):
     return p
 
 def check_win(p):
-    comp = random.choice(set1)
+    comp = choice(set1)
     s=0
     print(f'COMPUTER:{comp}')
     if (p!='')and((p=='SCISSORS'and comp=='PAPER') or (p  =='PAPER' and comp == 'ROCK')or( p== 'ROCK' and comp == 'SCISSORS')):
         s= 100
         print('HURRAY!YOU WON ')
         print('+100 POINTS\n')
-        time.sleep(4)
+        sleep(4)
     return s
 def greet():
     print(f'---------HI {na}, its good to see you,lets play ROCK PAPER SCISSOR----------------')
     print()
     print('YOU NEED NOT TO TYPE ROCK,PAPER, SCISSOR\nEACH TIME JUST ENTER R for ROCK,S for SCISSOR,P for PAPER WHEN IT SAYS:\nYOUR MOVE:')
     print()
-time.sleep(2)
+    sleep(2)
 
 # main code:
 set1= ['ROCK','PAPER', 'SCISSORS']
 score=0
 na = input('PLEASE ENTER YOUR NAME').upper()
-time.sleep(1)
+sleep(1)
 
 greet()
 
@@ -46,7 +46,7 @@ while True:
     f=input('DO YOU WANT TO PLAY AGAIN?\nY/N?').upper()
     print()
     if f=='N':
-        time.sleep(1)
+        sleep(1)
         print('FINE,WE WILL MEET AGAIN...')
         break
 
